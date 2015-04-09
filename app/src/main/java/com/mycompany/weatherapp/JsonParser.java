@@ -10,13 +10,15 @@ import org.json.JSONObject;
 public class JsonParser {
 
     public static Day[] parse(String json){
-
+        json = "{" + json +"}";
+        System.out.println(json);
         try {
             JSONObject jObject = new JSONObject(json);
             JSONArray jArray = jObject.getJSONArray("data");
             Day[] days = new Day[jArray.length()];
 
             for(int i = 0; i < jArray.length();i++){
+                days[i] = new Day();
                 JSONObject c = jArray.getJSONObject(i);
                 days[i].setDate(c.getString("date"));
                 days[i].setTempHigh(c.getString("tempHigh"));

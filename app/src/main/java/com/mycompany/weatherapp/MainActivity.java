@@ -1,5 +1,6 @@
 package com.mycompany.weatherapp;
 
+import android.os.AsyncTask;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.support.v7.app.ActionBarActivity;
@@ -33,6 +34,8 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends ActionBarActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,20 +64,34 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
     public void sendRequest(View view){
-
         final TextView scoreDisplay = (TextView)findViewById(R.id.contentText);
-        WeatherData mThread = new WeatherData();
-        mThread.start();
-
-        HandlerThread myThread = new HandlerThread("Worker Thread");
-        myThread.start();
-
-        Looper mLooper = myThread.getLooper();
-        MyHandler mHandler = new MyHandler(mLooper);
-
-
-
+        scoreDisplay.setText("Running");
+        new HTTPRequestTask().execute("String");
     }
+
+    private class HTTPRequestTask extends AsyncTask<String, Void, Day[]>{
+
+
+
+        @Override
+        protected Day[] doInBackground(String... params) {
+            WeatherData data = new WeatherData();
+            Day[] days  = data.makeServiceCall();
+
+            return days;
+        }
+
+        @Override
+        protected void onPostExecute(Day[] days) {
+            final TextView scoreDisplay = (TextView)findViewById(R.id.contentText);
+            scoreDisplay.setText("Done");
+            scoreDisplay.setText(days[0].date);
+        }
+    }
+
+
 
 }
