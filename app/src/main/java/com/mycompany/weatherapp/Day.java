@@ -26,4 +26,23 @@ public class Day {
         this.iconUrl = iconUrl;
     }
 
+    public String getDate(){
+        return this.date;
+    }
+    public String getTempHigh(){
+        return this.tempHigh;
+    }
+    public String getTempLow(){
+        return this.tempLow;
+    }
+    public String getPrecipEarly(){
+        return this.precipEarly;
+    }
+    public String getPrecipLate(){
+        return this.precipLate;
+    }
+    public String getIconUrl(){
+        return this.iconUrl;
+    }
+
 }

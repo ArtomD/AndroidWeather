@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/weather">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:padding="10dp">
+    <TextView
+
+        android:textSize="20dp"
+        android:text="Day 1\nHigh Temp: \nLow Temp: \nMorning Prcep %: \nEvening Precp %: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contentText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="20dp"/>
+
+    <ImageView
+        android:layout_height="110dp"
+        android:id="@+id/tempImage"
+        android:src="@drawable/snowflake1"
+        android:layout_width="wrap_content"
+        android:scaleType="fitStart"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/contentText"
+        android:layout_toEndOf="@+id/contentText"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="120dp" />
+
+
+
+    <TextView
+
+        android:textSize="20dp"
+        android:text="Day 2\nHigh Temp: \nLow Temp: \nMorning Prcep %: \nEvening Precp %: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contentText2"
+        android:layout_below="@+id/contentText"
+        android:layout_margin="20dp"/>
+        <ImageView
+            android:layout_height="110dp"
+            android:id="@+id/tempImage2"
+            android:src="@drawable/snowflake1"
+            android:layout_width="wrap_content"
+            android:scaleType="fitStart"
+            android:layout_alignTop="@+id/contentText2"
+            android:layout_alignLeft="@+id/tempImage"
+            android:layout_alignStart="@+id/tempImage" />
+       <TextView
+
+            android:textSize="20dp"
+            android:text="Day 3\nHigh Temp: \nLow Temp: \nMorning Prcep %: \nEvening Precp %: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/contentText3"
+            android:layout_below="@+id/contentText2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="20dp"/>
+
+        <ImageView
+            android:layout_height="110dp"
+            android:id="@+id/tempImage3"
+            android:src="@drawable/snowflake1"
+            android:layout_width="wrap_content"
+            android:scaleType="fitStart"
+            android:layout_alignTop="@+id/contentText3"
+            android:layout_alignLeft="@+id/tempImage2"
+            android:layout_alignStart="@+id/tempImage2" />
+
+    <TextView
+
+        android:textSize="20dp"
+        android:text="Day 4\nHigh Temp: \nLow Temp: \nMorning Prcep %: \nEvening Precp %: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contentText4"
+        android:layout_below="@+id/contentText3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="20dp"/>
+
+        <ImageView
+            android:layout_height="110dp"
+            android:id="@+id/tempImage4"
+            android:src="@drawable/snowflake1"
+            android:layout_width="wrap_content"
+            android:scaleType="fitStart"
+            android:layout_alignTop="@+id/contentText4"
+            android:layout_alignLeft="@+id/tempImage3"
+            android:layout_alignStart="@+id/tempImage3" />
+    <TextView
+
+        android:textSize="20dp"
+        android:text="Day 5\nHigh Temp: \nLow Temp: \nMorning Prcep %: \nEvening Precp %: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contentText5"
+        android:layout_below="@+id/contentText4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="20dp"/>
+        <ImageView
+            android:layout_height="110dp"
+            android:id="@+id/tempImage5"
+            android:src="@drawable/snowflake1"
+            android:layout_width="100dp"
+            android:scaleType="fitStart"
+            android:layout_alignTop="@+id/contentText5"
+            android:layout_alignLeft="@+id/tempImage4"
+            android:layout_alignStart="@+id/tempImage4" />
+
+
+    </RelativeLayout>
+</LinearLayout>

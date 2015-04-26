@@ -11,10 +11,11 @@ public class JsonParser {
 
     public static Day[] parse(String json){
         json = "{" + json +"}";
-        System.out.println(json);
+
         try {
             JSONObject jObject = new JSONObject(json);
             JSONArray jArray = jObject.getJSONArray("data");
+
             Day[] days = new Day[jArray.length()];
 
             for(int i = 0; i < jArray.length();i++){
@@ -22,13 +23,13 @@ public class JsonParser {
                 JSONObject c = jArray.getJSONObject(i);
                 days[i].setDate(c.getString("date"));
                 days[i].setTempHigh(c.getString("tempHigh"));
+
                 days[i].setTempLow(c.getString("tempLow"));
                 days[i].setPrecipEarly(c.getString("precipEarly"));
                 days[i].setPrecipLate(c.getString("precipLate"));
                 days[i].setIconUrl(c.getString("iconUrl"));
-
-                return days;
             }
+            return days;
         } catch (JSONException e) {
             e.printStackTrace();
         }

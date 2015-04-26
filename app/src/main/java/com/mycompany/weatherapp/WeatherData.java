@@ -84,9 +84,9 @@ public class WeatherData {
         return days;
     }
 
-    public Day[] makeServiceCall() {
+    public Day[] makeServiceCall(String numDays) {
 
-        String url = "https://infinite-ravine-1759.herokuapp.com/weather";
+        String url = "https://infinite-ravine-1759.herokuapp.com/weatherByIp/" + numDays;
         String response = null;
         try {
             // http client
@@ -116,7 +116,7 @@ public class WeatherData {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(response);
+       // System.out.println(response);
         Day[] days = JsonParser.parse(response);
         return days;
 
